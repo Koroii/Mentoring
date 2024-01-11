@@ -6,6 +6,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
+            #region Teoria
             // if (wyrazenie logiczne)
             // polecenie; --> jednolinijkowe
 
@@ -127,7 +128,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             //    Console.WriteLine("Dochod jest zerowy");
             //}
 
-            int dzien = int.Parse(Console.ReadLine());
+            //int dzien = int.Parse(Console.ReadLine());
 
             //if (dzien == 1)
             //{
@@ -152,29 +153,122 @@ namespace MyApp // Note: actual namespace depends on the project name.
             //    Console.WriteLine("Nie ma takiego dnia");
             //}
 
-            switch (dzien)
+            //switch (dzien)
+            //{
+            //    case 1:
+            //        Console.WriteLine("Poniedzialek");
+            //        break;
+            //    case 2:
+            //        Console.WriteLine("Wtorek");
+            //        break;
+            //    case 3:
+            //        Console.WriteLine("Sroda");
+            //        break;
+            //    case 4:
+            //        Console.WriteLine("Czwartek");
+            //        break;
+            //    default: 
+            //        Console.WriteLine("Nie ma takiego dnia");
+            //        break;
+            //}
+
+            //bool prawda = 1 > 0;
+            //int niewiadomoCo = prawda ? 1 : 0;
+
+            //Console.WriteLine(niewiadomoCo);
+            #endregion
+
+            #region Zadania
+            // Program ktory dla podanej liczny calkowitej sprawdza czy jest parzysta
+            //int liczba = int.Parse(Console.ReadLine());
+
+            //if (liczba % 2 == 0)
+            //{
+            //    Console.WriteLine("Liczba jest parzysta");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Liczba jest nieparzysta");
+            //}
+
+
+            // Program ktory sprawdza czy podany rok jest rokienm przestepnym. Rok przestepny dzieli sie bez reszty przez 4, nie dzieli sie orzez 100 (za wyjatkiem lat podzielnych przez 400)
+            //int rok = int.Parse(Console.ReadLine());
+
+            //bool czyPrzestepny = rok % 4 == 0 && (rok % 100 != 0 || rok % 400 == 0);
+
+            //string wiadomosc = "Rok " + rok + " jest " + (czyPrzestepny ? "przestepny" : "nieprzestny");
+            //Console.WriteLine(wiadomosc);
+
+            // Program pobiera dwie liczby i sprawdza czy liczba druga jest dzielnikiem pierwszej
+            // 24, 6 
+            //Console.WriteLine("Podaj dzielna: ");
+            //int dzielna = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Podaj dzielnik: ");
+            //int dzielnik = int.Parse(Console.ReadLine());
+
+            //if (dzielna % dzielnik == 0)
+            //{
+            //    Console.WriteLine("Liczba "+ dzielnik + " jest dzielnikiem liczby "+dzielna);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Liczba " + dzielnik + " nie jest dzielnikiem liczby " + dzielna);
+            //}
+
+            // program obliczajacy liczbe pierwiastkow rownania kwadratowego.
+            // y = ax^2 + bx + c
+            //Console.WriteLine("Podaj a:");
+            //int a = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Podaj b:");
+            //int b = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Podaj c:");
+            //int c = int.Parse(Console.ReadLine());
+
+            //int delta = (int)Math.Pow(b, 2) - 4 * a * c;
+            //// b^2 to nie jest potega!
+
+            //if(delta > 0)
+            //{
+            //    int x1 = (-b - (int)Math.Sqrt(delta)) / (2 * a);
+            //    int x2 = (-b + (int)Math.Sqrt(delta)) / (2 * a);
+            //    Console.WriteLine("Pierwiastkami sa x1=" + x1 + " oraz x2=" + x2);
+            //}
+            //else if(delta == 0)
+            //{
+            //    int x0 = -b / 2 * a;
+
+            //    Console.WriteLine("Pierwiastkiem jest x0 = "+ x0);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Brak pierwiastkow");
+            //}
+
+            // Program obliczajacy BMI
+
+            // masa / wzrost^2
+
+            Console.WriteLine("Podaj mase");
+            int masa = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj wzrost w metrach");
+            double wzrost = double.Parse(Console.ReadLine()); 
+
+            double bmi = masa / Math.Pow(wzrost, 2);
+            
+            if (bmi < 18.5)
             {
-                case 1:
-                    Console.WriteLine("Poniedzialek");
-                    break;
-                case 2:
-                    Console.WriteLine("Wtorek");
-                    break;
-                case 3:
-                    Console.WriteLine("Sroda");
-                    break;
-                case 4:
-                    Console.WriteLine("Czwartek");
-                    break;
-                default: 
-                    Console.WriteLine("Nie ma takiego dnia");
-                    break;
+                Console.WriteLine("niedowaga");
             }
-
-            bool prawda = 1 > 0;
-            int niewiadomoCo = prawda ? 1 : 0;
-
-            Console.WriteLine(niewiadomoCo);
+            else if (bmi >= 25)
+            {
+                Console.WriteLine("nadwaga");
+            }
+            else // else if (bmi >= 18.5 && bmi <=5
+            {
+                Console.WriteLine("Waga prawidlowa");
+            }
+            #endregion
         }
     }
 }
